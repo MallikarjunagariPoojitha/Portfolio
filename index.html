@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <title>Document</title>
+    <style>
+        #home {
+            width: 100%;
+            padding-top: 30px; /* Add padding to the top of the content to avoid overlap with the navbar */
+        }
+    
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100; /* Add a higher z-index value to ensure the navbar appears above other elements */
+        }
+       
+        nav ul{
+            
+            width: 100%;
+            position: fixed;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            justify-content: flex-end;
+            background-color: #333;
+            text-align: right;
+        }
+        li:first-child{
+            float:left;
+            font-size: 20px;
+            margin-left:2cm;
+        }
+        li {
+            display: inline-block;
+            color: white;
+            padding: 15px;
+            margin-right: 2cm;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+        }
+        li a:hover {
+            background-image: linear-gradient(to right, #c53fb5, #8617e1ce);
+            border-width: 30px;
+            border-radius: 10px;
+            /* Add a color change on hover if desired */
+        }
+        .name{
+            font-family:cursive;
+            font-weight: bold;
+        }
+        .mysite {
+            display: flex;
+            height: 85vh;
+        }
+        .left-section {
+            width: 30%;
+            background-color: white;
+            padding: 2rem;
+        }
+        .right-section {
+            width: 70%;
+            background-image: linear-gradient(to right, #c53fb5, #8617e1ce);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%);
+            display: flex;
+            justify-content: flex-end;
+        }
+        .left-section .intro{
+            margin-left:2cm;
+            margin-top:3cm;
+            line-height: 30px;
+            font-family: cursive;
+            font-size: 16px;
+            
+        }
+        .right-section img{
+            width:500px;
+            height:400px;
+            border-radius:50%;
+            margin-top: 3cm;
+            margin-right:4cm;
+        }
+        .myskills img{
+            width:100px;
+            height:100px;
+            border-radius:36%;
+            margin-top: 3cm;
+            margin-right:4cm;
+            display: flex;
+        }
+        .icons{
+            margin-top:-2.8cm;
+            font-size: 30px; 
+        }
+        .icons a{
+            padding: 10px;
+        }
+        .icons a:hover{
+            box-shadow: 0 0 5px black;
+            color:blue;
+        }
+        .download{
+            background-image: linear-gradient(to right, #c53fb5, #8617e1ce);
+            color:white;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: cursive;
+            font-size: 16px;
+           
+            margin-left:-0.2cm;
+            
+        }
+       .download:hover{
+            background-image: linear-gradient(to right, #4cc53f, #5417e1ce);
+        }
+        .myskills img{
+            transition:  0.7s ease;
+            box-shadow: none;
+        }
+        
+        .myskills img:hover {
+            box-shadow: 0 0 10px white;
+            background-image: linear-gradient(to right, #4cc53f, #17b5e1ce);
+        }
+        
+
+        #skills .myskills{
+            text-align: center;
+        }
+        #skills .myskills img{
+                width:200px;
+                height: 200px;
+               margin-top:1cm;
+            
+        }
+        #skills .myskills h2{
+            font-family: cursive;
+            text-align: center;
+            margin-top: 1cm;
+        }
+        #skills {
+           display: flex;
+            justify-content: center;
+            background-image: linear-gradient(to right, #c53fb5, #8617e1ce);
+          }
+          
+          #skills img {
+            margin: 12px;
+            transition: transform 0.3s ease-in-out;
+          }
+          #skills img:hover {
+            transform: scale(0.9);
+          }
+          
+          .myskills .tooltip {
+            position: relative;
+            display:inline-block;
+            border-bottom: 1px dotted black;
+        }
+        .myskills .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+           text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .myskills .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+          #projects h2{
+            text-align: center;
+            font-family: cursive;
+          }
+          .myprojects{
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+             width: 450px;
+             margin-left: 1cm;
+             height: 630px;
+             display: flex;
+             background-color:rgba(185, 73, 166, 0.3);
+             
+          }
+          .myproject2{
+            background-color:rgba(185, 73, 166, 0.3);
+            margin-left:2cm;
+          }
+           .project {
+            flex-basis: 50%; /* Each project takes 50% width */
+        }
+          .project img{
+            width:350px;
+            height: 300px;
+           margin-left:1cm;
+           padding: 10px;
+           display: flex;
+          }
+          .project .pro_con{
+            margin-left:1cm;
+            font-family: cursive;
+          }
+          .project2{
+            width:450px;
+          }
+         button{
+            margin-left:3cm;
+            padding: 10px;
+            font-family: cursive;
+            background-color: orange;
+            
+            border-radius: 10px;
+            
+         } 
+         button:hover{
+            background-image: linear-gradient(to right, #c53fb5, #8617e1ce);
+            color: white;
+         }
+         #contact {
+            text-align: center;
+            background-color: violet;
+          }
+          
+          #contact h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            font-family: cursive;
+          }
+          
+          #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .ur_info input,
+          .ur_info textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: cursive;
+          }
+          
+          .ur_info button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          .ur_info button:hover {
+            background-color: #45a049;
+          }
+          
+          .ur_info button:active {
+            background-color: #3e8e41;
+          }
+          
+          .ur_info input[type="text"]:focus,
+          .ur_info input[type="email"]:focus,
+          .ur_info input[type="number"]:focus,
+          .ur_info textarea:focus {
+            outline: none;
+            border-color: #4caf50;
+          }
+          .response-message {
+            margin-top: 10px;
+            color: green;
+        }
+     .leetcode{
+        width:30px;
+        height:30px;
+     }
+       
+    </style>
+</head>
+<body>
+    <div id="home">
+    <nav>
+        <ul>
+            <li>Mallikarjuna Gari <span class="name">Poojitha</span></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="home">
+    <div class="mysite">
+        <div class="left-section">
+            <div class="intro">
+                <p>HEY THERE!</p>
+                <h2>I AM POOJITHA</h2>
+                <p>I am a passionate and dedicated fresher<br>
+                    a keen interest in software and <br>
+                    web development,looking to kickstart my career in the dynamic field of technology.</p><br><br>
+                    <button type="submit" class="download" target="_blank">
+                        Download Resume
+                        <a href="https://drive.google.com/file/d/1Ei1ElbS89aAV5kRux0uZB-BVjFftl5oV/view?usp=drivesdk">&#129095;</a>
+                    </button><br>
+                    <div class="icons">
+                    <a href="https://www.linkedin.com/in/mallikarjuna-gari-poojitha/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/MallikarjunagariPoojitha" target="_blank">
+                    <i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/poojithashetty_29/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.hackerrank.com/mallikarjunagar2?hr_r=1" target="_blank">
+                    <i class="fa-brands fa-hackerrank"></i></a>
+                    <a href="https://leetcode.com/PoojithaM/" target="_blank">
+                        <img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/leetcode_logo_icon_145113.png" alt="LeetCode Icon" class="leetcode">
+                    </a>
+                    </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/507/525/original/web-artist-portfolio-2d-isolated-illustration-remote-work-searching-flat-character-on-cartoon-background-colourful-editable-scene-for-mobile-website-presentation-vector.jpg">
+        </div>
+       </div>
+      </div>
+    </div>
+    <div id="skills">
+        <div class="myskills">
+            <h2>MY SKILLS</h2>
+            <div class="tooltip">
+            <img src="https://www.clipartmax.com/png/middle/351-3515666_c-language-global-or-external-variables-with-examples-c-programming-logo.png" value="C">
+            <span class="tooltiptext">C</span>
+            </div>
+            <div class="tooltip">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"value="Python " >
+             <span class="tooltiptext">Python</span>
+             </div>
+             <div class="tooltip">
+            <img src="data:image/png;base64,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" value="Java"><br>
+            <span class="tooltiptext">Java</span>
+            </div>
+            <div class="tooltip">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png" value="HTML5">
+            <span class="tooltiptext">Html</span>
+            </div>
+            <div class="tooltip">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/css3-logo-png-transparent.png" value="CSS">
+            <span class="tooltiptext">Css</span>
+            </div>
+            <div class="tooltip">
+            <img src="https://1.bp.blogspot.com/-TGQt5uRcAkg/XuMIJoAhwnI/AAAAAAAAA34/l8bWxNY_DwMrowIr4rjV7KHpUHTIDpsRQCLcBGAsYHQ/s1600/js.png" value="JavaScript">
+            <span class="tooltiptext">Java script</span>
+            </div>
+            <div class="tooltip">
+            <img src="https://w7.pngwing.com/pngs/170/924/png-transparent-microsoft-sql-server-microsoft-azure-sql-database-microsoft-text-logo-microsoft-azure.png" value="Sql">
+            <span class="tooltiptext">Sql</span>
+            </div>
+            <div class="tooltip">
+            <img src="https://w7.pngwing.com/pngs/580/809/png-transparent-data-structure-logo-brand-data-structure-blue-text-logo.png" >
+            <span class="tooltiptext">Data Structures</span>
+            </div>
+        </div>
+    </div>
+    <div id="projects">
+        <h2>MY PROJECTS</h2>
+        <div class="myprojects">
+            <div class="project">
+                <img src="https://www.cloudways.com/blog/wp-content/uploads/ecommerce-website-checklist-b-.jpg">
+                <div class="pro_con">
+                <h3>EMPOWERING ONLINE SHOPPING:<br> HTML/CSS/JAVASCRIPT
+                    IN<br> E-COMMERCE WEB DESIGN</h3>
+                <p>Created a user-friendly interface for browsing <br>productsand
+                    viewing product details. Analyzed <br>customer requirements
+                    and developed a user-friendly ecommerce website utilizing<br>
+                    HTML,CSS,JavaScript</p>
+                    <button type="submit">View Report</button>
+               </div>
+           </div>
+         <div class="myproject2">
+          <div class="project">
+            <div class="project2">
+            <img src="https://appinventor.mit.edu/images/Alexa/Alexa_NumberGuess.jpeg">
+           <div class="pro_con">
+            <h3>NUMBER GUESSER: A JAVA GAME OF MIND AND NUMBERS</h3>
+            <p> Number Guesseris a Java-based game that <br>challenges
+                players to guess a randomly generated number within a given
+                range. With each guess, players<br> receive feedback to guide
+                them towards the correct answer. Test you</p>
+                <button type="submit" id="submit">View Report</button>
+           </div>
+           </div>
+       </div>
+       </div>
+       <div class="myproject2">
+        <div class="project">
+          <div class="project2">
+          <img src="https://cdn2.vectorstock.com/i/1000x1000/91/31/portfolio-paper-poster-with-colorful-brush-strokes-vector-21849131.jpg">
+         <div class="pro_con">
+          <h3>PROFESSIONAL PORTFOLIO:</h3>
+          <p>Welcome to my portfolio, where I showcase my work and accomplishments. Explore a collection of projects that highlight my skills and creativity. From eye-catching designs to impactful campaigns, my portfolio demonstrates my ability to bring ideas to life and make a positive impact.</p>
+              <button type="submit" id="submit">View Report</button>
+         </div>
+         </div>
+     </div>
+     </div>
+    </div>
+    </div>
+    <div id="contact">
+        <h2>Let's Get In Touch!</h2>
+        <form>
+            <div class="ur_info">
+            <input type="text" placeholder="Full Name" required><br>
+            <input type="email" placeholder="Email Address"required><br>
+            <input type="number" placeholder="Phone Number" required><br>
+            <textarea cols="100" rows="10" placeholder="Message"></textarea><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    const submit=document.getElementById("submit")
+    submit.addEventListener("submit",function(){
+        event.preventDefault();
+        alert("Your response submitted")
+
+    })
+    
+</script>
+</html>
